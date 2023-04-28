@@ -47,7 +47,7 @@ public class MovementAutomatic : MonoBehaviour
             }
     }
 
-    private void HorizontalBounce()
+    public void HorizontalBounce()
     {
         float movement = speed * Time.deltaTime;
 
