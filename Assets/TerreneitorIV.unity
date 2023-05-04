@@ -1576,6 +1576,7 @@ GameObject:
   - component: {fileID: 481796330}
   - component: {fileID: 481796331}
   - component: {fileID: 481796332}
+  - component: {fileID: 481796333}
   m_Layer: 0
   m_Name: attack-02
   m_TagString: Untagged
@@ -1636,7 +1637,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 9a20c343a03a6e54a9a3c14e4ed48626, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1728,6 +1729,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &481796333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481796326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd20d652e772a6940a2abf3f9319e28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &762237565
 GameObject:
   m_ObjectHideFlags: 0
