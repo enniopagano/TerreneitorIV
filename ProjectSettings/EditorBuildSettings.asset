@@ -6,7 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Pixel Adventure 1/Scenes/Demo.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/TerreneitorIV.unity
+    guid: 924ed1fbce835bc48b1c4ae45b798f44
+  - enabled: 1
+    path: Assets/escena_victoria.unity
+    guid: d96977c204dcdd643980b47ec997bd56
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 99c8cd1ab60571b20bec57c7ebd0b40e, type: 2}

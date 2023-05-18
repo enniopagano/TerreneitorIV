@@ -13,7 +13,6 @@ public class key_movement : MonoBehaviour
     [SerializeField] float _step;
     Transform t;
     Vector3 p;
-    MovementAutomatic Mateo;
     private void Awake(){
         t = GetComponent<Transform>();
         // Mateo.HorizontalBounce();
