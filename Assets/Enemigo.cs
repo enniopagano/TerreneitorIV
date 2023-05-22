@@ -21,4 +21,18 @@ public class Enemigo : MonoBehaviour
             SceneManager.LoadScene(2);
         }
     }
+    
+    private void Deteccion (){
+        Collider2D[] objetos = Physics2D.OverlapCircleAll(transform.position, 1);
+        foreach( Collider2D colisionador in objetos){
+            Personaje Personaje = colisionador.transform.GetComponent<Personaje>();
+            if (Personaje != null){
+
+                Personaje.Destruir_Personaje(true);
+            }
+        }
+    }
+    void Update (){
+        Deteccion();
+    }
 }
