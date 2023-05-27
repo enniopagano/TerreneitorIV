@@ -3,21 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Personaje : MonoBehaviour
+public class Volver_jugar : MonoBehaviour
 {
+
+    public void Volver_a_Jugar(){
+        SceneManager.LoadScene(1);
+    }
     // Start is called before the first frame update
     void Start()
     {
         
     }
-    public void Destruir_Personaje(bool condicional){
-        if(condicional){
-            Destroy(this.gameObject);
-            SceneManager.LoadScene(3);
-        }else{
-            Debug.Log("loool");
-        }
-    }
+
     // Update is called once per frame
     void Update()
     {

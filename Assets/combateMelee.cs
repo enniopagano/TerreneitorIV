@@ -34,13 +34,18 @@ public class combateMelee : MonoBehaviour
         animador = GetComponent<Animator>();
     }
 
+    public void Ataque(){
+        animador.SetTrigger("ataque");
+        Golpe();
+    }
+
     // Update is called once per frame
     void Update()
     {
-         if (Input.GetMouseButtonDown(0))
-        {
-            animador.SetTrigger("ataque");
-            Golpe();
-        }
+        //  if (Input.GetMouseButtonDown(0))
+        // {
+        //     animador.SetTrigger("ataque");
+        //     Golpe();
+        // }
     }
 }

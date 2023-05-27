@@ -52,7 +52,22 @@ public class newkeymovement : MonoBehaviour
             return false;
         }
     }
+    public void Arriba(){
+        if(isGrounded()){
+            movementscript.force_up(jump,rigid);
+        }
+    }
+    public void Derecha(){
+          if(isGrounded()){
+            movementscript.force_right(horizontal,rigid);
+        } 
+    }
+    public void Izquierda(){
+         if(isGrounded()){
+            movementscript.force_left(horizontal,rigid);
+        }
 
+    } 
     // Update is called once per frame
     void Update()
     {
@@ -60,17 +75,8 @@ public class newkeymovement : MonoBehaviour
         {
             movementscript.force_up(jump,rigid);
         }
-        if(Input.GetKey( keyleft )&& isGrounded())
-        {
-            movementscript.force_left(horizontal,rigid);
-            // Flip ();
-            // facingRight = false;
-        }
-        if(Input.GetKey( keyright )&& isGrounded())
-        {
-            movementscript.force_right(horizontal,rigid);
-
-        }       
+       
+            
         if(Input.GetKey( keydown ))
         {
             movementscript.force_down(descend,rigid);
