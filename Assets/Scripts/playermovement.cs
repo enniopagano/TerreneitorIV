@@ -103,8 +103,6 @@ public class playermovement : MonoBehaviour
     // el fixupdate nos da un resultado reproducible no dependiente del hardware, por tanto nos es util para la simulacion de fisicas
     void FixedUpdate(){ 
         floorRaycast = Physics2D.BoxCast(transform.position, boxSize, 0f, -transform.up, boxDistance, floorLayer);
-
-    
         if(moveUp){
             up();
             moveUp = false;
