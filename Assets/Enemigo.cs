@@ -18,12 +18,12 @@ public class Enemigo : MonoBehaviour
         if (vida <= 0)
         {
             Destroy(this.gameObject);
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
         }
     }
     
     private void Deteccion (){
-        Collider2D[] objetos = Physics2D.OverlapCircleAll(transform.position, 1);
+        Collider2D[] objetos = Physics2D.OverlapCircleAll(transform.position, 3);
         foreach( Collider2D colisionador in objetos){
             Personaje Personaje = colisionador.transform.GetComponent<Personaje>();
             if (Personaje != null){

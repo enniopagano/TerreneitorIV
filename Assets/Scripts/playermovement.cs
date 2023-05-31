@@ -31,6 +31,7 @@ public class playermovement : MonoBehaviour
 
 
     Movement movementscript;
+    Personaje personajescript;
     Rigidbody2D rigid;
 
     // estado de los punteros de salto
@@ -46,15 +47,16 @@ public class playermovement : MonoBehaviour
     private int dashCount;
 
 
-
+    private Transform t;
     private void Awake(){
-        //t = GetComponent<Transform>();
+        t = GetComponent<Transform>();
 
     }
     // Start is called before the first frame update
     void Start()
     {
         movementscript = GameObject.FindObjectOfType<Movement>(); // buscamos el script movement
+        personajescript = GameObject.FindObjectOfType<Personaje>();
         
         rigid = GetComponent<Rigidbody2D>();
         
@@ -118,6 +120,9 @@ public class playermovement : MonoBehaviour
             down();
         }
         rigid.velocity = Vector3.ClampMagnitude(rigid.velocity, maxSpeed);
+        if(t.position.y < -30){
+            personajescript.Destruir_Personaje(true);
+        }
     }
     
     
@@ -135,9 +140,11 @@ public class playermovement : MonoBehaviour
     }
     private void groundValidation(){
         if(floorRaycast){
-            rigid.drag = 6f;
+            rigid.drag = 10f;
+            rigid.gravityScale = 0;
         }else{
             rigid.drag = 0f;
+            rigid.gravityScale = ToSingle(1.4);
         }
     }
 

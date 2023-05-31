@@ -13,7 +13,7 @@ public class Personaje : MonoBehaviour
     public void Destruir_Personaje(bool condicional){
         if(condicional){
             Destroy(this.gameObject);
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(2);
         }else{
             Debug.Log("loool");
         }
