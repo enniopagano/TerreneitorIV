@@ -120,7 +120,7 @@ public class playermovement : MonoBehaviour
             down();
         }
         rigid.velocity = Vector3.ClampMagnitude(rigid.velocity, maxSpeed);
-        if(t.position.y < -30){
+        if(t.position.y < -14){
             personajescript.Destruir_Personaje(true);
         }
     }
