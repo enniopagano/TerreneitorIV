@@ -13,7 +13,6 @@ public class key_movement : MonoBehaviour
     [SerializeField] float _step;
     Transform t;
     Vector3 p;
-    MovementAutomatic Mateo;
     private void Awake(){
         t = GetComponent<Transform>();
         // Mateo.HorizontalBounce();
@@ -26,7 +25,6 @@ public class key_movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -34,6 +32,7 @@ public class key_movement : MonoBehaviour
     {
         if(Input.GetKeyDown( _up ))
         {
+            
             p=new Vector3(t.position.x, t.position.y + _step);
             Mover(t,p);
         }

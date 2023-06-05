@@ -6,11 +6,10 @@ public class MovementAutomatic : MonoBehaviour
     enum TypeMovementBot { HorizontalBounce,VerticalBounce,HorizontalFromLeft, HorizontalFromRight,VerticalFromAbove, VerticalFromBelow }
 
     [SerializeField] TypeMovementBot typeMovementRobot;
-
+    [SerializeField] float limit;
     private Transform t;
     private int randomInt;
     private float speed = 1f;
-    private float limit = 5f;
 
     private void Awake()
     {
