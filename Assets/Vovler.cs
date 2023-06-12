@@ -12,7 +12,7 @@ public class Vovler : MonoBehaviour
     }
     public void Volver_Inicio (){
 
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(3);
 
     }
     // Update is called once per frame
