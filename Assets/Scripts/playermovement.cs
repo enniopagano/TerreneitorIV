@@ -46,15 +46,18 @@ public class playermovement : MonoBehaviour
     private int jumpCount;
     private int dashCount;
 
+    // public AudioSource source;
 
     private Transform t;
     private void Awake(){
         t = GetComponent<Transform>();
+        // source = GetComponent<AudioSource>();
 
     }
     // Start is called before the first frame update
     void Start()
     {
+
         movementscript = GameObject.FindObjectOfType<Movement>(); // buscamos el script movement
         personajescript = GameObject.FindObjectOfType<Personaje>();
         
@@ -123,6 +126,10 @@ public class playermovement : MonoBehaviour
         if(t.position.y < -11){
             personajescript.Destruir_Personaje(true);
         }
+        // if(t.position.x < -23){
+        //     Debug
+        //     source.Play();
+        // }
     }
     
     
