@@ -30897,6 +30897,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9235a6e0a96d21458cab2d6f87f5f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mounstro: {fileID: 11400000, guid: c897a95633ddc274da64bd19a7afad78, type: 2}
+  spriteRenderer: {fileID: 0}
+  imagen: {fileID: 0}
 --- !u!114 &1652106469
 MonoBehaviour:
   m_ObjectHideFlags: 0
