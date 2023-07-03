@@ -41,7 +41,7 @@ public class Enemigo : MonoBehaviour
     }
     
     private void Deteccion (){
-        Collider2D[] objetos = Physics2D.OverlapCircleAll(transform.position, 3);
+        Collider2D[] objetos = Physics2D.OverlapCircleAll(transform.position, 2);
         foreach( Collider2D colisionador in objetos){
             Personaje Personaje = colisionador.transform.GetComponent<Personaje>();
             if (Personaje != null){
