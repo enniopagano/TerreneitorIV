@@ -2,14 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class combateMelee : MonoBehaviour
 {
     Animator animador;
     [SerializeField] private float radioGolpe;
     [SerializeField] private float dañoGolpe;
-    
+    public AudioSource source;
+    void Start()
+    {
+        animador = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
+    }
     private void Golpe (){
+        source.Play();
         Collider2D[] objetos = Physics2D.OverlapCircleAll(transform.position, radioGolpe);
         foreach( Collider2D colisionador in objetos){
             Enemigo enemigoTemporal = colisionador.transform.GetComponent<Enemigo>();
@@ -18,6 +24,7 @@ public class combateMelee : MonoBehaviour
                 enemigoTemporal.TomarDaño(dañoGolpe);
             }
         }
+
     }
 
     // void OnTriggerEnter2D(Collider2D colisionador){
@@ -30,10 +37,6 @@ public class combateMelee : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
-        animador = GetComponent<Animator>();
-    }
 
     // Update is called once per frame
     public void Atacar(){

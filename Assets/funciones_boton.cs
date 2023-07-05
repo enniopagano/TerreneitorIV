@@ -8,7 +8,7 @@ public class funciones_boton : MonoBehaviour
     public void Volver_Inicio()
     {   
         Debug.Log("loooo");
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(3);
     }
     void Start()
     {
