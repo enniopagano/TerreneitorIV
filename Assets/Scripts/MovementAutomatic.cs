@@ -92,13 +92,14 @@ public class MovementAutomatic : MonoBehaviour
 
     private void HorizontalFromLeft()
     {
+        
         float movement = speed * Time.deltaTime;
 
-        if (t.position.x >= limit)
+        if (t.position.x <= limit)
         {
-        t.position = new Vector3(-limit, t.position.y, t.position.z); // si toca el borde, se teletransporta al limite opuesto
+        t.position = new Vector3(75.5f, -16.9f,3); // si toca el borde, se teletransporta al limite opuesto
         }
-        t.position += new Vector3(movement, 0f, 0f); //se mueve hacia la derecha
+        t.position += new Vector3(-movement, 0f, 0f); //se mueve hacia la izquierda
     }
 
     private void HorizontalFromRight()
