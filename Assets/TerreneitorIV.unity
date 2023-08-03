@@ -32822,7 +32822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeMovementRobot: 3
-  limit: 5
+  limit: 75
 --- !u!114 &489112850
 MonoBehaviour:
   m_ObjectHideFlags: 0
