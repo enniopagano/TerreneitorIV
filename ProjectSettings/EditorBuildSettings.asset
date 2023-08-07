@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Derrota.unity
     guid: 74067b2fd2e729340afddc2d7ad73c4b
   - enabled: 1
-    path: Assets/TerreneitorIV.unity
+    path: Assets/Nivel(1).unity
     guid: 924ed1fbce835bc48b1c4ae45b798f44
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 2fc537d3b760ac0de9168eb46f35689f, type: 2}
