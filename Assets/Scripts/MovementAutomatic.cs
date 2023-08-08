@@ -54,7 +54,7 @@ public class MovementAutomatic : MonoBehaviour
         if (randomInt == 0)
         {
             t.position += new Vector3(movement, 0f, 0f); // se mueve hacia la derecha
-            if (t.position.x >= limit) // si es mayor a el limite positivo rebotar
+            if (t.position.x >= posicionInicial + limit) // si es mayor a el limite positivo rebotar
             {
                 randomInt = 1;
             }
@@ -62,7 +62,11 @@ public class MovementAutomatic : MonoBehaviour
         else
         {
             t.position += new Vector3(-movement, 0f, 0f); // se mueve hacia la izquierda
+<<<<<<< Updated upstream
             if (t.position.x <= limit) // si es menor al limite negativo rebotar
+=======
+            if (t.position.x <= posicionInicial -limit) // si es menor al limite negativo rebotar
+>>>>>>> Stashed changes
             {
                 randomInt = 0;
             }
@@ -76,7 +80,7 @@ public class MovementAutomatic : MonoBehaviour
         if (randomInt == 0)
         {
             t.position += new Vector3(0f, movement, 0f); // se mueve hacia arriba
-            if (t.position.y >= limit) // si es mayor a el limite positivo rebotar
+            if (t.position.y >= posicionInicial + limit) // si es mayor a el limite positivo rebotar
             {
                 randomInt = 1;
             }
@@ -84,7 +88,7 @@ public class MovementAutomatic : MonoBehaviour
         else
         {
             t.position += new Vector3(0f, -movement, 0f); //se mueve hacia abajo
-            if (t.position.y <= -limit) // si es menor al limite negativo rebotar
+            if (t.position.y <= posicionInicial -limit) // si es menor al limite negativo rebotar
             {
                 randomInt = 0;
             }
@@ -96,7 +100,7 @@ public class MovementAutomatic : MonoBehaviour
 
         float movement = speed * Time.deltaTime;
 
-        if (t.position.x <= limit)
+        if (t.position.x <= posicionInicial + limit)
         {
             t.position = new Vector3(75.5f, -16.9f, 3); // si toca el borde, se teletransporta al limite opuesto
         }
@@ -107,7 +111,7 @@ public class MovementAutomatic : MonoBehaviour
     {
         float movement = speed * Time.deltaTime;
 
-        if (t.position.x <= limit)
+        if (t.position.x <= posicionInicial + limit)
         {
             t.position = new Vector3(posicionInicial, t.position.y, t.position.z); // si toca el borde, se teletransporta al limite opuesto
         }
@@ -118,7 +122,7 @@ public class MovementAutomatic : MonoBehaviour
     {
         float movement = speed * Time.deltaTime;
 
-        if (t.position.y <= -limit)
+        if (t.position.y <= posicionInicial -limit)
         {
             t.position = new Vector3(t.position.x, limit, t.position.z); // si toca el borde, se teletransporta al limite opuesto
         }
@@ -129,7 +133,7 @@ public class MovementAutomatic : MonoBehaviour
     {
         float movement = speed * Time.deltaTime;
 
-        if (t.position.y >= limit)
+        if (t.position.y >= posicionInicial + limit)
         {
             t.position = new Vector3(t.position.x, -limit, t.position.z); // si toca el borde, se teletransporta al limite opuesto
         }
