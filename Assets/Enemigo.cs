@@ -36,7 +36,7 @@ public class Enemigo : MonoBehaviour
         if (vida <= 0)
         {
             Destroy(this.gameObject);
-            SceneManager.LoadScene(1);
+            // SceneManager.LoadScene(1);
         }
     }
     

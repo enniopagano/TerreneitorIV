@@ -27,6 +27,7 @@ public class Personaje : MonoBehaviour
     // }
     void Update()
     {
+        
         //  if(t.position.x => -23 ){
         //      Sonido_enenmigo();
         // }

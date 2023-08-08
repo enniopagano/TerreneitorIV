@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playermovement : MonoBehaviour
 {
@@ -52,7 +53,6 @@ public class playermovement : MonoBehaviour
     private void Awake(){
         t = GetComponent<Transform>();
         // source = GetComponent<AudioSource>();
-
     }
     // Start is called before the first frame update
     void Start()
@@ -104,9 +104,11 @@ public class playermovement : MonoBehaviour
         }
 
         groundValidation();
+        
     }
     // el fixupdate nos da un resultado reproducible no dependiente del hardware, por tanto nos es util para la simulacion de fisicas
     void FixedUpdate(){ 
+        Scene scene = SceneManager.GetActiveScene();
         floorRaycast = Physics2D.BoxCast(transform.position, boxSize, 0f, -transform.up, boxDistance, floorLayer);
         if(moveUp){
             up();
@@ -125,6 +127,10 @@ public class playermovement : MonoBehaviour
         rigid.velocity = Vector3.ClampMagnitude(rigid.velocity, maxSpeed);
         if(t.position.y < -22){
             personajescript.Destruir_Personaje(true);
+        }
+        if(t.position.x >= 105 && scene.name =="Nivel(1)"){
+            SceneManager.LoadScene("Nivel(2)");
+            Debug.Log("Deberia Cargar");
         }
         // if(t.position.x < -16){
         //     Debug
@@ -234,5 +240,6 @@ public static float ToSingle(double value)
 {
      return (float)value;
 }
+      
 
 }
