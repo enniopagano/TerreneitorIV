@@ -62,11 +62,7 @@ public class MovementAutomatic : MonoBehaviour
         else
         {
             t.position += new Vector3(-movement, 0f, 0f); // se mueve hacia la izquierda
-<<<<<<< Updated upstream
-            if (t.position.x <= limit) // si es menor al limite negativo rebotar
-=======
             if (t.position.x <= posicionInicial -limit) // si es menor al limite negativo rebotar
->>>>>>> Stashed changes
             {
                 randomInt = 0;
             }
