@@ -43,21 +43,40 @@ public class playermovement : MonoBehaviour
 
     public float maxSpeed;
 
+
+    // Audio
+
+    public AudioSource source; // Fuente del audio a.k.a de donde sale el sonido
+
+    public AudioClip[] PasosEnPiedra; // array de audios
+    public AudioClip SaltoEnPiedra;
+    public AudioClip AterrizajeEnPiedra;
+
+    AudioClip RandomClip(AudioClip[] audioClipArray){
+        return audioClipArray[Random.Range(0, audioClipArray.Length-1)]; // funcion que devuelve un audio aleatorio dentro de una lista
+    }
+
+    // prueba
+    public float xDistanceThreshold = 2f;
+    public float yDistanceThreshold = 1f;
+
+    private Vector3 lastPosition;
+    // prueba
+
     private RaycastHit2D floorRaycast;
     private int jumpCount;
     private int dashCount;
 
-    // public AudioSource source;
-
+    
     private Transform t;
     private void Awake(){
         t = GetComponent<Transform>();
-        // source = GetComponent<AudioSource>();
+        source = GetComponent<AudioSource>();
     }
     // Start is called before the first frame update
     void Start()
     {
-
+        
         movementscript = GameObject.FindObjectOfType<Movement>(); // buscamos el script movement
         personajescript = GameObject.FindObjectOfType<Personaje>();
         
@@ -74,8 +93,10 @@ public class playermovement : MonoBehaviour
         jumpCount = 0;
         dashCount = 0;
 
+        lastPosition = transform.position;
+
     }
-    // Update is called once per frame
+    // Update se llama 1 vez por frame
     void Update()
     {
         if(Input.GetKeyDown( keyUp )){
@@ -128,9 +149,14 @@ public class playermovement : MonoBehaviour
         if(t.position.y < -22){
             personajescript.Destruir_Personaje(true);
         }
+        
         if(t.position.x >= 105 && scene.name =="Nivel(1)"){
             SceneManager.LoadScene("Nivel(2)");
             Debug.Log("Deberia Cargar");
+        }
+        
+        if (lastPosition.y < transform.position.y){
+            lastPosition.y = transform.position.y;
         }
         // if(t.position.x < -16){
         //     Debug
@@ -140,10 +166,16 @@ public class playermovement : MonoBehaviour
     
     
     private bool isGrounded(){
-        if(floorRaycast){        
+        if(floorRaycast){
+            //Debug.Log("it is grounded");    
+        float xDistanceMoved = Mathf.Abs(transform.position.x - lastPosition.x);
+        if (xDistanceMoved >= xDistanceThreshold)
+        {
+            AudioSource.PlayClipAtPoint(RandomClip(PasosEnPiedra), transform.position);
+            lastPosition.x = transform.position.x;
+        }
             jumpCount = 0;
             dashCount = 0;
-            //Debug.Log("it is grounded");    
             return true;
         }
         else{
@@ -151,8 +183,15 @@ public class playermovement : MonoBehaviour
             return false;
         }
     }
+    // si la distancia entre el punto maximo de altura y el piso es mayor a yDistanceThreshold
     private void groundValidation(){
         if(floorRaycast){
+        float yDistanceMoved = Mathf.Abs(transform.position.y - lastPosition.y);
+        if (yDistanceMoved >= yDistanceThreshold){
+        // Debug.Log("yDistanceMoved" + yDistanceMoved);
+            AudioSource.PlayClipAtPoint(AterrizajeEnPiedra, transform.position);
+        }
+        lastPosition.y = transform.position.y;
             rigid.drag = 10f;
             rigid.gravityScale = 0;
         }else{
@@ -183,6 +222,7 @@ public void up(){
     if (isGrounded()||countValidator(jumpCount,jumpNumber)){
         jumpCount++;
         movementscript.force_up(jumpForce,rigid,ForceMode2D.Impulse);
+        AudioSource.PlayClipAtPoint(SaltoEnPiedra, transform.position);
     }
 }
 public void left(){
@@ -190,7 +230,7 @@ public void left(){
         GetComponent<SpriteRenderer>().flipX = true;
         //movementscript.velocity_left(horizontalForce,rigid);
         movementscript.force_left(horizontalForce,rigid, ForceMode2D.Force);
-    }else{
+    }else{ // si esta en el aite, que se mueva poco
         movementscript.force_left(ToSingle(horizontalForce*0.02),rigid, ForceMode2D.Force);
     }
 }
@@ -199,7 +239,7 @@ public void right(){
         GetComponent<SpriteRenderer>().flipX = false;
         //movementscript.velocity_right(ToSingle(horizontalForce*0.5),rigid);
         movementscript.force_right(horizontalForce,rigid, ForceMode2D.Force);
-    }else{ // si esta en el aire, que se pueda mover poco
+    }else{ // si esta en el aire, que se mueva poco
         movementscript.force_right(ToSingle(horizontalForce*0.02),rigid, ForceMode2D.Force);
     }
 }
