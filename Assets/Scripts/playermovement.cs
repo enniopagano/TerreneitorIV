@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class playermovement : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class playermovement : MonoBehaviour
 
     public Vector3 boxSize;
     public float boxDistance;
+
+    public GameObject particles;
 
 
     Movement movementscript;
@@ -76,6 +79,7 @@ public class playermovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        particles.SetActive(false);
         
         movementscript = GameObject.FindObjectOfType<Movement>(); // buscamos el script movement
         personajescript = GameObject.FindObjectOfType<Personaje>();
@@ -183,6 +187,12 @@ public class playermovement : MonoBehaviour
             return false;
         }
     }
+
+    private async Task setFalse(){
+        await Task.Delay(1500);
+        particles.SetActive(false);
+    }
+
     // si la distancia entre el punto maximo de altura y el piso es mayor a yDistanceThreshold
     private void groundValidation(){
         if(floorRaycast){
@@ -190,6 +200,8 @@ public class playermovement : MonoBehaviour
         if (yDistanceMoved >= yDistanceThreshold){
         // Debug.Log("yDistanceMoved" + yDistanceMoved);
             AudioSource.PlayClipAtPoint(AterrizajeEnPiedra, transform.position);
+            particles.SetActive(true);
+            setFalse();
         }
         lastPosition.y = transform.position.y;
             rigid.drag = 10f;

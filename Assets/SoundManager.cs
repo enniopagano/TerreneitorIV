@@ -10,7 +10,6 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    // https://youtu.be/yWCHaTwVblk?t=190   
  }
 
     // Update is called once per frame
