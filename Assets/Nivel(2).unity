@@ -181,7 +181,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 2089808119}
           m_TargetAssemblyTypeName: playermovement, Assembly-CSharp
           m_MethodName: PointerDownLeft
           m_Mode: 1
@@ -199,7 +199,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2089808119}
           m_TargetAssemblyTypeName: playermovement, Assembly-CSharp
-          m_MethodName: left
+          m_MethodName: PointerUpLeft
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f9f1a72d0b062bf428c715fc7525f003, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 01d7b388e7827ca45a56bd1b632ffde1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -44383,6 +44383,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &146981774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4726086134001567640, guid: 50eb7916444b06c4394286af9330876a, type: 3}
+  m_PrefabInstance: {fileID: 1404220369}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &256700674
 GameObject:
   m_ObjectHideFlags: 0
@@ -44630,8 +44635,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 424, y: -166.9}
-  m_SizeDelta: {x: 423.3447, y: 316.2057}
+  m_AnchoredPosition: {x: 1326.2, y: -398.49}
+  m_SizeDelta: {x: 958.1262, y: 618.0131}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &285670992
 GameObject:
@@ -44755,7 +44760,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.76400006, y: 0.82800007}
   m_AnchorMax: {x: 0.76400006, y: 0.82800007}
-  m_AnchoredPosition: {x: -63, y: -217}
+  m_AnchoredPosition: {x: -222, y: -302}
   m_SizeDelta: {x: 160, y: 19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &287893128
@@ -45963,7 +45968,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 2089808119}
           m_TargetAssemblyTypeName: playermovement, Assembly-CSharp
           m_MethodName: PointerDownRight
           m_Mode: 1
@@ -45981,7 +45986,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2089808119}
           m_TargetAssemblyTypeName: playermovement, Assembly-CSharp
-          m_MethodName: right
+          m_MethodName: PointerUpRight
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -46067,7 +46072,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f9f1a72d0b062bf428c715fc7525f003, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 01d7b388e7827ca45a56bd1b632ffde1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -67858,7 +67863,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2089808119}
           m_TargetAssemblyTypeName: playermovement, Assembly-CSharp
-          m_MethodName: up
+          m_MethodName: PointerDownUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -67960,7 +67965,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 879cf2625c8c4af409eefd2ed6cad863, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e197a1515abdbc4b91281eee95e8b33, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -68497,6 +68502,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 4726086134001567640, guid: 50eb7916444b06c4394286af9330876a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6006532735082905033, guid: 50eb7916444b06c4394286af9330876a, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -68541,6 +68550,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6006532735082905039, guid: 50eb7916444b06c4394286af9330876a, type: 3}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 146981774}
     - target: {fileID: 6006532735082905046, guid: 50eb7916444b06c4394286af9330876a, type: 3}
       propertyPath: m_Name
       value: PadrePersonaje
@@ -76535,7 +76548,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -318, y: 108}
+  m_AnchoredPosition: {x: -928, y: 355}
   m_SizeDelta: {x: 2.28, y: 2.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2016095219
