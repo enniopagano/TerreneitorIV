@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 public class playermovement : MonoBehaviour
 {
+
+    Animator anim;
     // teclas del teclado para cada movimiento
     public KeyCode keyUp = KeyCode.W;
     public KeyCode keyLeft = KeyCode.A;
@@ -75,10 +77,12 @@ public class playermovement : MonoBehaviour
     private void Awake(){
         t = GetComponent<Transform>();
         source = GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
     }
     // Start is called before the first frame update
     void Start()
     {
+
         particles.SetActive(false);
         
         movementscript = GameObject.FindObjectOfType<Movement>(); // buscamos el script movement
@@ -171,7 +175,7 @@ public class playermovement : MonoBehaviour
     
     private bool isGrounded(){
         if(floorRaycast){
-            //Debug.Log("it is grounded");    
+            //Debug.Log("it is grounded");
         float xDistanceMoved = Mathf.Abs(transform.position.x - lastPosition.x);
         if (xDistanceMoved >= xDistanceThreshold)
         {
@@ -196,6 +200,7 @@ public class playermovement : MonoBehaviour
     // si la distancia entre el punto maximo de altura y el piso es mayor a yDistanceThreshold
     private void groundValidation(){
         if(floorRaycast){
+            anim.SetTrigger("Idle");
         float yDistanceMoved = Mathf.Abs(transform.position.y - lastPosition.y);
         if (yDistanceMoved >= yDistanceThreshold){
         // Debug.Log("yDistanceMoved" + yDistanceMoved);
