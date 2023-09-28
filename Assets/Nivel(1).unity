@@ -46014,7 +46014,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1094010100}
+        - m_Target: {fileID: 1148035147}
           m_TargetAssemblyTypeName: combateMelee, Assembly-CSharp
           m_MethodName: Atacar
           m_Mode: 1
@@ -46284,7 +46284,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 879cf2625c8c4af409eefd2ed6cad863, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a1e642ac4188cf544b455c79870d43f6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -46608,17 +46608,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083122192}
   m_CullTransparentMesh: 1
---- !u!114 &1094010100 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6006532735082905036, guid: 50eb7916444b06c4394286af9330876a, type: 3}
-  m_PrefabInstance: {fileID: 6006532734026676536}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bce7b76e2c6ea5f4db5293fb747b1e37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1094010103 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6006532735082905039, guid: 50eb7916444b06c4394286af9330876a, type: 3}
@@ -47106,7 +47095,7 @@ SpriteRenderer:
   m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!82 &1148035142
@@ -47239,8 +47228,8 @@ MonoBehaviour:
   keyRight: 100
   keyWalk: 306
   keyDash: 0
-  horizontalForce: 50
-  jumpForce: 12
+  horizontalForce: 190
+  jumpForce: 26
   descendForce: 1
   dashForce: 0
   jumpNumber: 0
@@ -47274,8 +47263,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 1.486047
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 1
@@ -139908,7 +139897,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f9f1a72d0b062bf428c715fc7525f003, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 841ae3188ba4d9746ba4f4ed86597a98, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -140328,7 +140317,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f9f1a72d0b062bf428c715fc7525f003, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 841ae3188ba4d9746ba4f4ed86597a98, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

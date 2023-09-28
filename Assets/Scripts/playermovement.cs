@@ -165,7 +165,13 @@ public class playermovement : MonoBehaviour
         
         if (lastPosition.y < transform.position.y){
             lastPosition.y = transform.position.y;
+        }else if (rigid.velocity.y < -0.2){
+            anim.Play("Caida");
         }
+        if (rigid.velocity.magnitude < 0.85 && anim.GetBool("Ataque") == false){
+             anim.Play("Idle");
+        }
+        anim.SetFloat("Speed",rigid.velocity.magnitude/11);
         // if(t.position.x < -16){
         //     Debug
         //     source.Play();
@@ -200,7 +206,6 @@ public class playermovement : MonoBehaviour
     // si la distancia entre el punto maximo de altura y el piso es mayor a yDistanceThreshold
     private void groundValidation(){
         if(floorRaycast){
-            anim.SetTrigger("Idle");
         float yDistanceMoved = Mathf.Abs(transform.position.y - lastPosition.y);
         if (yDistanceMoved >= yDistanceThreshold){
         // Debug.Log("yDistanceMoved" + yDistanceMoved);
@@ -209,11 +214,11 @@ public class playermovement : MonoBehaviour
             setFalse();
         }
         lastPosition.y = transform.position.y;
-            rigid.drag = 10f;
+            rigid.drag = 11f;
             rigid.gravityScale = 0;
         }else{
             rigid.drag = 0f;
-            rigid.gravityScale = ToSingle(1.4);
+            rigid.gravityScale = ToSingle(2.5);
         }
     }
 
@@ -247,8 +252,9 @@ public void left(){
         GetComponent<SpriteRenderer>().flipX = true;
         //movementscript.velocity_left(horizontalForce,rigid);
         movementscript.force_left(horizontalForce,rigid, ForceMode2D.Force);
+        anim.Play("Corridos");
     }else{ // si esta en el aite, que se mueva poco
-        movementscript.force_left(ToSingle(horizontalForce*0.02),rigid, ForceMode2D.Force);
+        movementscript.force_left(ToSingle(horizontalForce*0.015),rigid, ForceMode2D.Force);
     }
 }
 public void right(){
@@ -256,8 +262,9 @@ public void right(){
         GetComponent<SpriteRenderer>().flipX = false;
         //movementscript.velocity_right(ToSingle(horizontalForce*0.5),rigid);
         movementscript.force_right(horizontalForce,rigid, ForceMode2D.Force);
+        anim.Play("Corridos");
     }else{ // si esta en el aire, que se mueva poco
-        movementscript.force_right(ToSingle(horizontalForce*0.02),rigid, ForceMode2D.Force);
+        movementscript.force_right(ToSingle(horizontalForce*0.015),rigid, ForceMode2D.Force);
     }
 }
 public void down(){
